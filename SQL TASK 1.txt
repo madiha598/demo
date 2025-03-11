@@ -1,0 +1,96 @@
+SECTION A
+1: create database company_db
+3:difference between drop, truncate and delete
+  1:drop: delete the entire table + data
+   2:truncate:removes all rows but keeps table structure.
+
+   3:delete:removes specific rows based on condition.
+4:numeric data type:                                                                
+   1:smallint
+    2:integer
+    3:bigint
+    4:decimal /numeric
+    5:double precision 
+  String data type:
+      1:char(n)or character(n)
+      2:varchar
+      3:text
+
+     1:char(n)or character(n):store fixed length string.if the data be shorter than defined length it is padded with spaces.
+
+     2:varchar:stores variable length strings.no extra spaces are added only the actual is stored.
+
+     3:text:used for very large set text data. best for long unstructed text.
+
+ 2:employess table
+    query:create table employees(emp_id int, first_name varchar,last_name varchar, salary int, hire_date date ,dept_id)  
+
+   departments table:
+    query: create table departments(dept_id int, dept_name varchar)
+
+
+SECTION B
+     
+    1: INSERT:insert into employees values(1, 'samantha', 'mcintyre', 64063.73 , 2016-05-07, 8)
+     
+    2: salary 10% increase query:update employees set salary = salary * 1.10;
+
+    3: delete from employee where hire_date < '2022-01-01';
+
+    4: select * from employee where salary between 50000 and 80000
+
+    5: select * from employee where first_name like 'J%';
+
+    
+SECTION C
+
+    1:select*from employee_table order by salary desc ;
+
+    2:select*from employee_table order by salary desc limit 3:
+
+    3:select sum(salary) from employee_table;
+
+    4:select avg(salary) from employees_table group by salary having avg(salary)>7000;
+
+Section D
+
+    1:select concat(first_name,' ',last_name) from employee_table;
+
+    2:select extract ('year'from hire_date) from employees_table;
+
+    3:select upper(first_name)from employees_table;
+
+    5:select date_trunc('month',hire_date) from employees_date;
+
+Section E
+
+     1:select coalsce(salary,5000) from employees_table;
+
+     2:select greatest(salary) from employee_table;
+    select least(salary) from employee_table;
+
+Section F
+
+     1:select * from employees AS e1 inner join departments AS d1 on e1.dept_id = d1.dept_id 
+     
+     4:difference between union and union all
+
+       1:union:combine the result sets of two or more select statements.removes duplicate rows from the final result
+
+       2:union all:also combine the result sets of two or more select statements.keep all duplicates rows meaning it does not removes repeated values.
+
+     
+
+
+ 
+    
+      
+
+
+
+
+
+
+
+
+
